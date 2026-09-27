@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Responsive mobile-first dashboard demo">
+  <title>Responsive Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <div class="dashboard">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">R</div>
+          <div>
+            <h1>Responsive Dashboard</h1>
+            <p>Mobile-first design system demo</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="icon-button" id="themeToggle" aria-label="Toggle theme">☾</button>
+          <button class="primary-button">View report</button>
+        </div>
+      </header>
+
+      <section class="dashboard-grid" aria-label="Dashboard">
+        <div class="kpi-grid">
+          <article class="card kpi">
+            <span class="kpi-label">Revenue</span>
+            <div class="kpi-value">₹84.2K</div>
+            <span class="kpi-change">+12.4%</span>
+          </article>
+
+          <article class="card kpi">
+            <span class="kpi-label">Users</span>
+            <div class="kpi-value">12,480</div>
+            <span class="kpi-change">+8.7%</span>
+          </article>
+
+          <article class="card kpi">
+            <span class="kpi-label">Conversion</span>
+            <div class="kpi-value">7.82%</div>
+            <span class="kpi-change">+2.1%</span>
+          </article>
+
+          <article class="card kpi">
+            <span class="kpi-label">Sessions</span>
+            <div class="kpi-value">28.4K</div>
+            <span class="kpi-change">+16.8%</span>
+          </article>
+        </div>
+
+        <article class="card main-chart">
+          <div class="card-header">
+            <h2>Performance</h2>
+            <span class="muted">Last 30 days</span>
+          </div>
+          <div class="card-body">
+            <div class="chart">Responsive chart area</div>
+          </div>
+        </article>
+
+        <article class="card activity">
+          <div class="card-header">
+            <h2>Recent activity</h2>
+          </div>
+          <div class="card-body">
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <div class="list-title">New account created</div>
+                  <span class="muted">2 minutes ago</span>
+                </div>
+                <span class="status success">New</span>
+              </div>
+              <div class="list-item">
+                <div>
+                  <div class="list-title">Monthly report generated</div>
+                  <span class="muted">24 minutes ago</span>
+                </div>
+                <span class="status success">Done</span>
+              </div>
+              <div class="list-item">
+                <div>
+                  <div class="list-title">Storage usage warning</div>
+                  <span class="muted">1 hour ago</span>
+                </div>
+                <span class="status warning">Alert</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card wide-card">
+          <div class="card-header">
+            <h2>Responsive layout</h2>
+          </div>
+          <div class="card-body">
+            <p class="muted">
+              The grid changes from one column on phones to two columns on tablets,
+              then a 12-column dashboard on desktop.
+            </p>
+          </div>
+        </article>
+
+        <article class="card side-card">
+          <div class="card-header">
+            <h2>Design tokens</h2>
+          </div>
+          <div class="card-body">
+            <p class="muted">
+              Colors, spacing, typography, radii and shadows are controlled from
+              <code>:root</code>.
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById("themeToggle");
+
+    button.addEventListener("click", () => {
+      const dark = root.dataset.theme === "dark";
+      root.dataset.theme = dark ? "light" : "dark";
+      button.textContent = dark ? "☾" : "☀";
+    });
+  </script>
+</body>
+</html>
